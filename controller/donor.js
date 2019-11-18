@@ -36,16 +36,6 @@ exports.new = function (req, res) {
 
     });
 
-
-console.log(donor.url);
-// save the post and check for errors
-    donor.save(function (err) {
-        // if (err)
-        //     res.json(err);
-        res.json({
-            message: 'New donor created!',
-        });
-    });
 };
 
 

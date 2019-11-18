@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const multer = require('multer');
-
+var cors = require('cors');
 //routes
 const home = require('./routes/home');
 const post = require('./routes/post');
@@ -19,7 +19,7 @@ const notification = require('./routes/notification');
 
 
 global.__basedir = __dirname;
-
+app.use(cors());
 require('./app/uploadfile/upload.multipartfile.js')(app);
 
 
@@ -54,7 +54,7 @@ mongoose.connect('mongodb://root:root1234@ds063140.mlab.com:63140/blooddonation'
 .then(()=> console.log('Connected to mongoDB'))
 .catch(err=> console.error("Could not connect to mongoDB",err));
 
-var port     = process.env.PORT || 8080;
+var port     = process.env.PORT || 8888;
 
 var listen = app.listen(port);
 console.log('The App runs on port ' + port);

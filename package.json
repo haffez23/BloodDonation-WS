@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-
   },
   "author": "Mohamed Haffez",
   "license": "ISC",
@@ -14,6 +13,7 @@
     "@pusher/push-notifications-server": "^1.0.1",
     "array-sort": "^1.0.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "debug": "^4.1.0",
     "express": "^4.16.4",
     "express-fileupload": "^1.0.0",

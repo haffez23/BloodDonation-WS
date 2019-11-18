@@ -6,7 +6,7 @@ exports.findByCompanyId = (req, res) => {
 		if (err){
 			if(err.kind === 'ObjectId') {
 				return res.status(404).send({
-					message: "No comments with given Company Id " + req.params.postID
+					message: "No comments with given post Id " + req.params.postID
 				});
 			}
 			return res.status(500).send({

@@ -1,5 +1,5 @@
 Post = require('../models/post');
-var arraySort = require('array-sort');
+//var arraySort = require('array-sort');
 
 // Handle index actions
 exports.index = function (req, res) {
@@ -10,14 +10,7 @@ exports.index = function (req, res) {
                 message: err,
             });
         }
-        res.json(
-
-            posts.reverse()
-
-
-
-
-            );
+        res.json(posts.reverse());
     });
 };
 // Handle create post actions
@@ -25,12 +18,11 @@ exports.new = function (req, res) {
     var post = new Post();
     post.postImage = req.body.postImage;
     post.postText = req.body.postText;
-    post.username = req.body.postText;
+    post.username = req.body.username;
     post.user=req.body.user;
     post.comments=req.body.comments;
 // save the post and check for errors
     post.save(function (err) {
-
          if (err)
              res.json(err);
         res.json({
