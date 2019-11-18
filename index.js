@@ -54,7 +54,7 @@ mongoose.connect('mongodb://root:root1234@ds063140.mlab.com:63140/blooddonation'
 .then(()=> console.log('Connected to mongoDB'))
 .catch(err=> console.error("Could not connect to mongoDB",err));
 
-var port     = process.env.PORT || 3000;
+var port     = process.env.PORT || 8080;
 
 var listen = app.listen(port);
 console.log('The App runs on port ' + port);

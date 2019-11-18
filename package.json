@@ -4,9 +4,10 @@
   "description": "Web srvices for Android blood donation application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+
   },
-  "start": "node index.js",
   "author": "Mohamed Haffez",
   "license": "ISC",
   "dependencies": {
