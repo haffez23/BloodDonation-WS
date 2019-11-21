@@ -4,6 +4,7 @@
   "description": "Web srvices for Android blood donation application",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npm install pusher connect-multiparty body-parser --save",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
