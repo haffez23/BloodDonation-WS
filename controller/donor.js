@@ -20,7 +20,6 @@ exports.index = function (req, res) {
 // Handle create post actions
 exports.new = function (req, res) {
     var donor = new Donor({
-
       id : req.body.id,
       email : req.body.email,
       number : req.body.number,
@@ -34,6 +33,15 @@ exports.new = function (req, res) {
       rate : req.body.rate,
 
 
+    });
+    donor.save(function (err) {
+        if (err){
+            res.status(400).json(err);
+        }
+        res.status(200).json({
+            message: 'Add new Donor',
+            data: donor
+        });
     });
 
 };

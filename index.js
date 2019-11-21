@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const dbDebugger = require('debug')('app:db');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
 const app = express();
 const multer = require('multer');
 var cors = require('cors');
@@ -17,6 +18,9 @@ const center = require('./routes/center');
 const request = require('./routes/request');
 const notification = require('./routes/notification');
 
+
+let Pusher = require("pusher");
+let Multipart = require("connect-multiparty");
 
 global.__basedir = __dirname;
 app.use(cors());
@@ -35,6 +39,8 @@ app.use(express.static('public'));
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use('/push', require('./push'));
 
 app.use('/',home);
 app.use('/api', post);

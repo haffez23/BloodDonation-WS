@@ -25,10 +25,12 @@ exports.new = function (req, res) {
     post.save(function (err) {
          if (err)
              res.json(err);
-        res.json({
-            message: 'New post created!',
-            data: post
-        });
+             else{
+                res.json({
+                    message: 'New post created!',
+                    data: post
+                });
+             }
     });
 };
 // Handle view post info
@@ -46,17 +48,22 @@ exports.view = function (req, res) {
 exports.update = function (req, res) {
     Post.findById(req.params.post_id, function (err, post) {
             if (err)
-                res.send(err);
-            post.comments.push(req.body.comments);
-            // save the post and check for errors
+                res.status(400).send(err);
+            else {
+                post.comments.push(req.body.comments);
+                 // save the post and check for errors
                 post.save(function (err) {
-                    //if (err)
-                      //  res.json(err);
-                    res.json({
+                    if (err)
+                        res.status(400).json(err);
+                    else {
+                        res.json({
                         message: 'post Info updated',
                         data: post
                     });
+                }
                 });
+            }    
+            
             });
 };
 // Handle delete post
