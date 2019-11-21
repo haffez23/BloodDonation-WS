@@ -4,16 +4,11 @@
   "description": "Web srvices for Android blood donation application",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install ",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
-
   "author": "Mohamed Haffez",
   "license": "ISC",
-  "engines": {
-    "node": "10.14.1"
-  },
   "dependencies": {
     "@pusher/push-notifications-server": "^1.0.1",
     "array-sort": "^1.0.0",
